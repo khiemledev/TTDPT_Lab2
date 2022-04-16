@@ -8,7 +8,7 @@ Member:
 
 - Le Tran Trong Khiem - 1952168
 - Tran Tien Hung - MSSV
-- ... - 1952
+- Dang Van Minh - 19521832
 
 # Detail
 
