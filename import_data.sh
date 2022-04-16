@@ -1,0 +1,1 @@
+docker exec -it app_service bash -c "./download_file.sh && python3 import_data.py"

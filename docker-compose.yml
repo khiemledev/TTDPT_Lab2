@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  app_service:
+    container_name: app_service
+    build: .
+    ports:
+      - "8086:80"
+    volumes:
+      - ./app:/app
+    depends_on:
+      - mysql_service
+    networks:
+      - service_network
+
+  mysql_service:
+    container_name: mysql_service
+    image: mysql
+    environment:
+      TZ: Asia/Ho_Chi_Minh
+      MYSQL_ROOT_PASSWORD: 'mypassword'
+      MYSQL_DATABASE: dblp_database
+      MYSQL_USER: khiemle
+      MYSQL_PASSWORD: khiemle123
+    volumes:
+      - ./database/privileges.sql:/docker-entrypoint-initdb.d/privileges.sql
+    networks:
+      - service_network
+
+volumes:
+  mysql_data:
+
+networks:
+  service_network:
